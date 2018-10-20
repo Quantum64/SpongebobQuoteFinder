@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/SpongebobQuoteFinder/precache-manifest.24dab15442a47f5799202fc6897bb4ce.js"
+  "/SpongebobQuoteFinder/precache-manifest.1970c0800889d39df090e083b0522814.js"
 );
 
 workbox.clientsClaim();
