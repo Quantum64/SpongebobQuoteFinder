@@ -8,12 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 
@@ -66,11 +64,9 @@ class App extends Component {
       results.push(resultDisplay)
       resultIndex++;
     }
+    let extraText = "© 2018 Quantum Development @ University of Cincinnati"
     if (results.length === 0) {
-      results = (
-        <Typography variant="subheading" gutterBottom align="center" style={{ color: "grey" }}>
-          Type a quote you want to find above...
-        </Typography>);
+      extraText = "Type a quote you want to find above...";
     }
 
     const { classes } = this.props;
@@ -104,8 +100,12 @@ class App extends Component {
         </AppBar>
         <Grid container spacing={24} direction="column" justify="center" alignItems="center" style={{ padding: 20 }}>
           {results}
+          <Grid item>
+            <Typography variant="subheading" gutterBottom align="center" style={{ color: "grey" }}>
+              {extraText}
+            </Typography>
+          </Grid>
         </Grid>
-
       </div>
     );
   }
