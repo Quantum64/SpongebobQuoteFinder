@@ -13,8 +13,9 @@
       "type": "image/png"
     }
   ],
-  "start_url": ".",
   "display": "standalone",
+  "orientation": "natural",
+  "start_url": ".",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
