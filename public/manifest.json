@@ -1,15 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Spongebob Quotes",
+  "name": "Spongebob Quote Finder",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "256x256 128x128 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "splash.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "orientation": "natural",
+  "start_url": ".",
+  "theme_color": "#e65100",
   "background_color": "#ffffff"
 }

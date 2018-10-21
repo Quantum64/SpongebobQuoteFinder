@@ -3,6 +3,11 @@ import episodes from "./episodes"
 export function search(text) {
     text = text.toLowerCase();
     let result = [];
+
+    // Benchmark
+    let benchmark = Date.now();
+
+    seasonLoop:
     for (let season of episodes) {
         for (let episode of season.episodes) {
             let matches = 0;
@@ -18,13 +23,17 @@ export function search(text) {
                         percent: percent
                     });
                     if (result.length >= 5) {
-                        return result;
+                        break seasonLoop;
                     }
                     matches++;
                 }
             }
         }
     }
+
+    // Benchmark result
+    console.log("Search took " + (Date.now() - benchmark) + "ms.")
+
     return result;
 }
 
