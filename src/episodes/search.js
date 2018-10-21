@@ -14,8 +14,10 @@ export function search(text) {
             for (let line of episode.lines) {
                 if (line.text.toLowerCase().includes(text)) {
                     const percent = Math.abs(((nthIndex(episode.text.toLowerCase(), text, matches + 1) / episode.text.length) * 100)).toFixed();
+                    let bold = line.text.splice(line.text.toLowerCase().indexOf(text), 0, "<b>");
+                    bold = bold.splice(line.text.toLowerCase().indexOf(text) + text.length + 3, 0, "</b>")
                     result.push({
-                        line: line.text,
+                        line: bold,
                         by: line.by,
                         season: season.number,
                         episode: episode.number,

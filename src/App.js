@@ -23,6 +23,9 @@ const theme = createMuiTheme({
     primary: { main: orange[900] },
     secondary: amber,
   },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 class App extends Component {
@@ -73,6 +76,7 @@ class App extends Component {
     let results = [];
     let resultIndex = 0;
     for (let result of this.state.results) {
+
       const resultDisplay = (
         <Grid item key={"result-card-" + resultIndex}>
           <Card>
@@ -84,9 +88,7 @@ class App extends Component {
                 About {result.percent}% through the episode
               </Typography>
               <br />
-              <Typography component="p">
-                “{result.line}”
-              </Typography>
+              <Typography component="p" dangerouslySetInnerHTML={{ __html: "“" + result.line + "”" }} />
               <Typography stype={{ fontSize: 14 }} color="textSecondary" gutterBottom>
                 <i>— {result.by}</i>
               </Typography>
@@ -103,7 +105,6 @@ class App extends Component {
     }
 
     const { classes } = this.props;
-    console.log(this.state.pwa())
     const cloud = this.state.pwa() === undefined ? "" : (
       <div className={classes.cloudIcon}>
         <IconButton
@@ -152,7 +153,7 @@ class App extends Component {
           <Grid container spacing={24} direction="column" justify="center" alignItems="center" style={{ padding: 20, margin: 0, width: '100%', }}>
             {results}
             <Grid item>
-              <Typography variant="subheading" gutterBottom align="center" style={{ color: "grey" }}>
+              <Typography variant="subtitle1" gutterBottom align="center" style={{ color: "grey" }}>
                 {extraText}
               </Typography>
             </Grid>
